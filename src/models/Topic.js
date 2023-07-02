@@ -1,7 +1,7 @@
-const sequelize = require('../database/database_connect.js');
-const { DataTypes } = require('sequelize');
+import sequelize  from '../database/database_connect.js';
+import { DataTypes } from "sequelize"
 
-const topic = sequelize.sequelize.define('topics',{
+const topic = sequelize.define('topics',{
     id_topic: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -26,6 +26,5 @@ const topic = sequelize.sequelize.define('topics',{
 },{
     timestamps: false
 })
-module.exports = {
-    topic: topic
-}
+
+export default topic;

@@ -1,14 +1,14 @@
-const express = require('express');
-const cors = require('cors');
+import express from "express"
+import cors from "cors"
 
 //Recordar meter esto en una variable de entorno
 const secret = 'sistemasdistribuidos2023';
 
-
 let app = express();
-const jwt = require('jsonwebtoken');
 
-const { routerTopic } = require('./routes/topics.routes.js');
+import jwt from 'jsonwebtoken';
+
+import routerTopic from './routes/topics.routes.js';
 
 
 app.use(cors());
@@ -38,4 +38,4 @@ app.post('/login', (req,res) => {
 });
 
 
-module.exports = app
+export default app;
