@@ -1,10 +1,12 @@
 import { Router } from 'express';
 import verify  from '../../middleware/verify.js';
+import { getAllClients, getClientById,authClient} from "../controllers/client_controller.js"
 
-const routerServer = Router();
+const routerClient = Router();
 
-routerTopic.get('/usuarios',verify, ()=>{
-    res.json("Esto devuelve todos los usuarios y sus contraseñas");
-});
+routerClient.get('/auth/users',verify, getAllClients);
+routerClient.post('/auth/users/authenticate', authClient);
+routerClient.get('/auth/users/:client_id', getClientById);
 
-export default routerTopic;
+
+export default routerClient;

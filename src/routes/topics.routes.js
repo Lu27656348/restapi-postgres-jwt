@@ -4,6 +4,6 @@ import verify  from '../../middleware/verify.js';
 
 const routerTopic = Router();
 
-routerTopic.get('/topics',verify, getAllTopics);
+routerTopic.get('/auth/topics',verify, getAllTopics);
 
 export default routerTopic;
